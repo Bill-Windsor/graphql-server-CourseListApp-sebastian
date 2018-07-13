@@ -59,7 +59,7 @@ getCourses = function(args) {
 		var topic = args.topic;
 		return coursesData.filter(course => course.topic === topic);
 	} else {
-// else condition returns entire data array
+// else the 'no courses passed as args' condition will return the entire Courses array
 		return coursesData;
 	}
 }

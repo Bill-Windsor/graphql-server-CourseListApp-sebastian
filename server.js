@@ -3,18 +3,19 @@ var express_graphql = require('express-graphql');
 var {buildSchema} = require('graphql');
 
 // GraphQL Schema
+// Function 'buildSchema' is imported from GraphQL Library
 var schema = buildSchema(`
     type Query {
         message: String
     }
 `);
 
-// Root resolver
+// RootQuery resolver
 var root = {
-    message: () => 'Hello Wold!'
+    message: () => 'Hello World!'
 };
 
-// Create an expres server and a GraphQL endpoint
+// Create an express server and a GraphQL endpoint
 var app = express();
 app.use('/graphql', express_graphql({
     schema: schema,
@@ -22,4 +23,4 @@ app.use('/graphql', express_graphql({
     graphiql: true
 }));
 
-app.listen(4000, () => console.log('Express GraphQL Server Now Running On localhost:4000/graphql'));
+app.listen(4000, () => console.log('Express GraphQL Server running on localhost:4000/graphql'));
